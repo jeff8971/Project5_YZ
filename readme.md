@@ -1,8 +1,7 @@
-# Project3_YZ: Project 4: Calibration and Augmented Reality
+# Project5_YZ: Project 5: Recognition using Deep Networks
 
-[Project Repository](https://github.com/jeff8971/Project4_YZ)
+[Project Repository](https://github.com/jeff8971/Project5_YZ)
 
-[DEMO](https://drive.google.com/file/d/1jM_PgVTPZHYQJVXBxExOj3yt8gHMWUUf/view?usp=drive_link)
 
 ## Overview
 Project4_YZ is developed as part of an advanced computer vision course, focusing on camera calibration, feature detection, and model projection. The project aims to implement a system capable of calibrating a camera using a chessboard pattern, detecting robust features in images, and visualizing 3D models in the context of augmented reality.
@@ -60,8 +59,6 @@ After building, the project generates executables for different tasks within the
 - `./features`: For detecting robust features in images.
 - `./show_models`: For visualizing 3D models in the context of augmented reality.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Utilization of Travel Days
 3 days
