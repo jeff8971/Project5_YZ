@@ -60,13 +60,16 @@ def visualize_filters_and_effects(network: torch.nn.Module, train_loader: torch.
             filter_np = filters[i, 0].numpy()
             filtered_image = cv2.filter2D(image_for_filtering, -1, filter_np)
 
-            plt.subplot(rows, 2 * cols, 2 * i + 1)
+            # Adjusting to the referenced subplot format
+            plt.subplot(5, 4,
+                        2 * i + 1)  # Assuming 5 rows and 4 cols layout as in reference
             plt.imshow(filter_np, cmap='gray')
-            plt.axis('off')
+            plt.axis('off')  # Simplifying axis visibility management
 
-            plt.subplot(rows, 2 * cols, 2 * i + 2)
+            plt.subplot(5, 4, 2 * i + 2)  # Next subplot for the filtered image
             plt.imshow(filtered_image, cmap='gray')
-            plt.axis('off')
+            plt.axis('off')  # Keeping axes off as in reference
+
         plt.tight_layout()
         plt.show()
 

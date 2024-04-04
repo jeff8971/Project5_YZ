@@ -59,7 +59,7 @@ def test_network_handwritten(network, test_loader):
             pred = output.argmax(dim=1, keepdim=True)
             correct += pred.eq(target.view_as(pred)).sum().item()
 
-            plt.subplot(2, 5, idx + 1)
+            plt.subplot(3, 3, idx + 1)
             plt.imshow(data[0].squeeze().numpy(), cmap='gray')
             plt.title(f'Pred: {pred.item()}', pad=2)
             plt.axis('off')
