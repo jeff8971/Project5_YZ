@@ -56,6 +56,7 @@ class UpdatedExperimentNetwork(nn.Module):
         x = self.fc2(x)
         return F.log_softmax(x, dim=1)
 
+
 # Training Function
 def train(model, device, train_loader, optimizer):
     model.train()
@@ -69,6 +70,7 @@ def train(model, device, train_loader, optimizer):
         optimizer.step()
         total_loss += loss.item()
     return total_loss / len(train_loader)
+
 
 # Evaluation Function
 def evaluate(model, device, test_loader):
@@ -86,8 +88,56 @@ def evaluate(model, device, test_loader):
     accuracy = 100. * correct / len(test_loader.dataset)
     return total_loss, accuracy
 
+
+def plot_results(results):
+    # Group results by layer and dropout configuration
+    grouped_results = {}
+    for num_layers, filters, dropout_rate, accuracy, loss in results:
+        key = (num_layers, dropout_rate)
+        if key not in grouped_results:
+            grouped_results[key] = []
+        grouped_results[key].append((filters, accuracy, loss))
+
+    # Sort results within each group for consistent plotting
+    for key in grouped_results.keys():
+        grouped_results[key].sort(key=lambda x: x[0])  # Sort by filters
+
+    # Create plots for each configuration set
+    fig_size = (18, 6 * len(grouped_results))  # Adjust figure size based on number of rows
+    fig, axes = plt.subplots(len(grouped_results), 3, figsize=fig_size, constrained_layout=True)
+
+    if len(grouped_results) == 1:  # Adjust for single row case to ensure axes is 2D
+        axes = np.array([axes])
+
+    for i, ((num_layers, dropout_rate), group_results) in enumerate(grouped_results.items()):
+        filters_list, accuracies, losses = zip(*group_results)
+
+        # Accuracy plot
+        axes[i][0].bar(filters_list, accuracies, color='skyblue')
+        axes[i][0].set_title(f'Accuracy (Layers: {num_layers}, Dropout: {dropout_rate})')
+        axes[i][0].set_xlabel('Filters')
+        axes[i][0].set_ylabel('Accuracy (%)')
+
+        # Loss plot
+        axes[i][1].bar(filters_list, losses, color='lightgreen')
+        axes[i][1].set_title(f'Loss (Layers: {num_layers}, Dropout: {dropout_rate})')
+        axes[i][1].set_xlabel('Filters')
+        axes[i][1].set_ylabel('Loss')
+
+        # Example of a third plot (e.g., Accuracy vs. Loss)
+        axes[i][2].plot(accuracies, losses, marker='o', linestyle='-', color='orange')
+        axes[i][2].set_title(f'Accuracy vs. Loss (Layers: {num_layers}, Dropout: {dropout_rate})')
+        axes[i][2].set_xlabel('Accuracy (%)')
+        axes[i][2].set_ylabel('Loss')
+        axes[i][2].set_xticks(np.arange(len(accuracies)))
+        axes[i][2].set_xticklabels([f'{a:.2f}' for a in accuracies], rotation=45)
+
+    plt.savefig('experiment_results.png')
+    plt.show()
+
+
 # Main Experiment Function
-def main_experiment():
+def main():
     results = []
     configurations = [
         (num_layers, filters, dropout_rate)
@@ -105,25 +155,8 @@ def main_experiment():
         results.append((num_layers, filters, dropout_rate, accuracy, loss))
         print(f"Layers: {num_layers}, Filters: {filters}, Dropout: {dropout_rate}, Accuracy: {accuracy}, Loss: {loss}")
 
-    # Plotting
-    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
-    accuracies = [acc for _, _, _, acc, _ in results]
-    losses = [loss for _, _, _, _, loss in results]
-    labels = [f"L:{l} F:{f} D:{d}" for l, f, d, _, _ in results]
+    plot_results(results)
 
-    axes[0].bar(labels, accuracies, color='skyblue')
-    axes[0].set_title('Accuracy per Configuration')
-    axes[0].set_xticklabels(labels, rotation=90)
-    axes[0].set_ylabel('Accuracy (%)')
-
-    axes[1].bar(labels, losses, color='lightgreen')
-    axes[1].set_title('Loss per Configuration')
-    axes[1].set_xticklabels(labels, rotation=90)
-    axes[1].set_ylabel('Loss')
-
-    plt.tight_layout()
-    plt.savefig('experiment_results.png')
-    plt.show()
 
 if __name__ == "__main__":
-    main_experiment()
+    main()
