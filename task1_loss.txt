@@ -1,0 +1,32 @@
+
+Test set: Avg. loss: 2.3130, Accuracy: 1319/10000 (13%)
+
+Training Epoch: 1  Loss: 0.346922  [59520/60000 (99%)]
+Test set: Avg. loss: 0.1657, Accuracy: 9488/10000 (95%)
+
+Training Epoch: 2  Loss: 0.164133  [59520/60000 (99%)]
+Test set: Avg. loss: 0.0971, Accuracy: 9690/10000 (97%)
+
+Training Epoch: 3  Loss: 0.113983  [59520/60000 (99%)]
+Test set: Avg. loss: 0.0690, Accuracy: 9785/10000 (98%)
+
+Training Epoch: 4  Loss: 0.233948  [59520/60000 (99%)]
+Test set: Avg. loss: 0.0578, Accuracy: 9815/10000 (98%)
+
+Training Epoch: 5  Loss: 0.089778  [59520/60000 (99%)]
+Test set: Avg. loss: 0.0520, Accuracy: 9830/10000 (98%)
+
+Training Epoch: 6  Loss: 0.182434  [59520/60000 (99%)]
+Test set: Avg. loss: 0.0503, Accuracy: 9833/10000 (98%)
+
+Training Epoch: 7  Loss: 0.157230  [59520/60000 (99%)]
+Test set: Avg. loss: 0.0472, Accuracy: 9847/10000 (98%)
+
+Training Epoch: 8  Loss: 0.035644  [59520/60000 (99%)]
+Test set: Avg. loss: 0.0395, Accuracy: 9865/10000 (99%)
+
+Training Epoch: 9  Loss: 0.148860  [59520/60000 (99%)]
+Test set: Avg. loss: 0.0383, Accuracy: 9877/10000 (99%)
+
+Training Epoch: 10  Loss: 0.040427  [59520/60000 (99%)]
+Test set: Avg. loss: 0.0346, Accuracy: 9893/10000 (99%)

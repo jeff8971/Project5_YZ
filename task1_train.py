@@ -1,12 +1,13 @@
 
 import sys
+import torch
 from torch import nn, optim
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
 from my_network import MyNetwork
 from task1_train_network import train_network, test_network
-
+from torchviz import make_dot
 
 # Constants
 BATCH_SIZE_TRAIN = 64
@@ -55,6 +56,12 @@ def main():
     network = MyNetwork()
     optimizer = optim.SGD(network.parameters(), lr=LEARNING_RATE,
                           momentum=MOMENTUM)
+
+    # Visualize the model architecture
+    sample_input = torch.randn(1000, 1, 28, 28)  # Adjust based on your
+    # network's expected input shape
+    model_vis = make_dot(network(sample_input), params=dict(network.named_parameters()))
+    model_vis.render('model_visualization', format='png')  # Saves the visualization
 
     # Training and testing setup
     train_losses, train_counter = [], []
