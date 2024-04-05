@@ -7,6 +7,7 @@ from torch.utils.data import DataLoader, Subset
 from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
 from my_network import MyNetwork
+import numpy as np
 
 
 # Constants
@@ -17,37 +18,49 @@ MNIST_TEST_ROOT = './data'
 HANDWRITTEN_TEST_ROOT = './data/handwritten'
 
 
-def test_network_MNIST(model, test_loader, plot_num=PLOT_NUM_MNIST):
-    """Test the network on MNIST data and plot predictions."""
+def test_network_MNIST(model, test_loader):
+    """Test the network on MNIST data, print output values, predictions, labels, and plot digits."""
     model.eval()
-    plt.figure(figsize=(12, (plot_num // 3 + 2) * 3))
+    plt.figure(figsize=(9, 9))  # Adjust the figure size to fit a 3x3 grid
 
     with torch.no_grad():
         for idx, (data, target) in enumerate(test_loader):
-            if idx == plot_num:
-                break
-
             output = model(data)
             pred = output.argmax(dim=1, keepdim=True)
+            output_probabilities = F.softmax(output, dim=1).squeeze().tolist()
 
-            print(f"Image {idx + 1} prediction: {pred[0][0].item()}, label: {target.item()}")
+            # Format output probabilities to scientific notation with two decimal places
+            formatted_output = [f"{prob:.2e}" for prob in output_probabilities]
 
-            plt.subplot((plot_num + 1) // 3, 3, idx + 1)
-            plt.imshow(data[0].squeeze().numpy(), cmap="gray")
-            plt.title(f"Pred: {pred[0][0].item()}", y=1.08, fontsize=16)
-            plt.xticks([])
-            plt.yticks([])
+            # Print the required information
+            print(f"Image {idx + 1}, output values: [{', '.join(formatted_output)}], max value index: {pred.item()}, ground truth label: {target.item()}")
+
+            # Plot the first 9 digits in a 3x3 grid
+            if idx < 9:
+                plt.subplot(3, 3, idx + 1)
+                plt.imshow(data[0].squeeze().numpy(), cmap="gray")
+                plt.title(f"Pred: {pred.item()}")
+                plt.xticks([])
+                plt.yticks([])
+
+            # Break after 10 images
+            if idx == 9:
+                break
 
     plt.tight_layout()
     plt.show()
 
+# The rest of the code remains the same
+
+
 
 def test_network_handwritten(network, test_loader):
-    """Test the network on handwritten digit images and plot predictions."""
+    """Test the network on handwritten digit images and plot predictions, and show accuracy."""
     network.eval()
-    test_loss, correct = 0, 0
+    plt.figure(figsize=(15, 8))  # Adjust the figure size for a 3x4 grid
 
-    plt.figure(figsize=(15, 6))
+    correct = 0  # Initialize correct prediction counter
+    total = 0  # Initialize total prediction counter
 
     with torch.no_grad():
         for idx, (data, target) in enumerate(test_loader):
@@ -55,11 +68,11 @@ def test_network_handwritten(network, test_loader):
                 break
 
             output = network(data)
-            test_loss += F.nll_loss(output, target, reduction='sum').item()
             pred = output.argmax(dim=1, keepdim=True)
-            correct += pred.eq(target.view_as(pred)).sum().item()
+            correct += pred.eq(target.view_as(pred)).sum().item()  # Count correct predictions
+            total += target.size(0)  # Update total predictions
 
-            plt.subplot(3, 3, idx + 1)
+            plt.subplot(3, 4, idx + 1)  # Adjust for a 3x4 grid
             plt.imshow(data[0].squeeze().numpy(), cmap='gray')
             plt.title(f'Pred: {pred.item()}', pad=2)
             plt.axis('off')
@@ -67,9 +80,9 @@ def test_network_handwritten(network, test_loader):
     plt.tight_layout()
     plt.show()
 
-    test_loss /= idx + 1
-    accuracy = 100. * correct / ((idx + 1) * test_loader.batch_size)
-    print(f'\nTest Set: Average Loss: {test_loss:.4f}, Accuracy: {correct}/{(idx + 1) * test_loader.batch_size} ({accuracy:.0f}%)')
+    accuracy = 100. * correct / total  # Calculate accuracy
+    print(f'Accuracy: {accuracy:.2f}%')
+
 
 
 class HandwrittenTransform:

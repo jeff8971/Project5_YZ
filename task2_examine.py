@@ -44,7 +44,7 @@ def visualize_filters_and_effects(network: torch.nn.Module, train_loader: torch.
         plt.figure(figsize=(cols * 3, rows * 3))
         for i in range(NUM_FILTERS_FIRST_LAYER):
             plt.subplot(rows, cols, i + 1)
-            plt.imshow(filters[i, 0], cmap='gray', interpolation='none')
+            plt.imshow(filters[i, 0], cmap='viridis', interpolation='none')
             plt.title(f'Filter {i + 1}')
             plt.axis('off')
         plt.tight_layout()
