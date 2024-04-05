@@ -46,23 +46,23 @@ git clone https://github.com/jeff8971/Project5_YZ.git
 
 ### Running the Applications
 - To train the MNIST network:
-```python task1_train.py
-```
+```python task1_train.py```
+
 
 - To test the network on MNIST and custom handwritten data:
-```python task1_test.py
-```
+```python task1_test.py```
+
 
 - To examine the first layer of the network:
-```python task2_examine.py
-```
+```python task2_examine.py```
+
 
 - To transfer the network to Greek letters:
-```python task3_greek.py
-```
+```python task3_greek.py```
+
 
 - To run custom design and experiment network:
-```python task4_design_experiment.py
-```
+```python task4_design_experiment.py```
+
 
 
