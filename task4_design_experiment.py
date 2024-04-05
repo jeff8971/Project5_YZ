@@ -5,8 +5,8 @@ import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
-import os
-from time import time
+import numpy as np
+import time
 
 # Configuration settings
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -56,9 +56,9 @@ class UpdatedExperimentNetwork(nn.Module):
         x = self.fc2(x)
         return F.log_softmax(x, dim=1)
 
-
 # Training Function
 def train(model, device, train_loader, optimizer):
+    start_time = time.time()
     model.train()
     total_loss = 0
     for data, target in train_loader:
@@ -69,8 +69,8 @@ def train(model, device, train_loader, optimizer):
         loss.backward()
         optimizer.step()
         total_loss += loss.item()
-    return total_loss / len(train_loader)
-
+    elapsed_time = time.time() - start_time
+    return total_loss / len(train_loader), elapsed_time
 
 # Evaluation Function
 def evaluate(model, device, test_loader):
@@ -88,7 +88,7 @@ def evaluate(model, device, test_loader):
     accuracy = 100. * correct / len(test_loader.dataset)
     return total_loss, accuracy
 
-
+# Plot Results Function
 def plot_results(results):
     # Group results by layer and dropout configuration
     grouped_results = {}
@@ -102,61 +102,57 @@ def plot_results(results):
     for key in grouped_results.keys():
         grouped_results[key].sort(key=lambda x: x[0])  # Sort by filters
 
-    # Create plots for each configuration set
-    fig_size = (18, 6 * len(grouped_results))  # Adjust figure size based on number of rows
-    fig, axes = plt.subplots(len(grouped_results), 3, figsize=fig_size, constrained_layout=True)
+    # Determine grid size
+    n_rows = len(grouped_results)
+    fig, axs = plt.subplots(n_rows, 3, figsize=(18, 6*n_rows))
 
-    if len(grouped_results) == 1:  # Adjust for single row case to ensure axes is 2D
-        axes = np.array([axes])
-
-    for i, ((num_layers, dropout_rate), group_results) in enumerate(grouped_results.items()):
-        filters_list, accuracies, losses = zip(*group_results)
+    for i, ((num_layers, dropout_rate), configs) in enumerate(grouped_results.items()):
+        filters, accuracies, losses = zip(*configs)
 
         # Accuracy plot
-        axes[i][0].bar(filters_list, accuracies, color='skyblue')
-        axes[i][0].set_title(f'Accuracy (Layers: {num_layers}, Dropout: {dropout_rate})')
-        axes[i][0].set_xlabel('Filters')
-        axes[i][0].set_ylabel('Accuracy (%)')
+        axs[i, 0].bar(filters, accuracies, color='skyblue')
+        axs[i, 0].set_title(f'Accuracy (Layers: {num_layers}, Dropout: {dropout_rate})')
+        axs[i, 0].set_xlabel('Number of Filters')
+        axs[i, 0].set_ylabel('Accuracy (%)')
 
         # Loss plot
-        axes[i][1].bar(filters_list, losses, color='lightgreen')
-        axes[i][1].set_title(f'Loss (Layers: {num_layers}, Dropout: {dropout_rate})')
-        axes[i][1].set_xlabel('Filters')
-        axes[i][1].set_ylabel('Loss')
+        axs[i, 1].bar(filters, losses, color='salmon')
+        axs[i, 1].set_title(f'Loss (Layers: {num_layers}, Dropout: {dropout_rate})')
+        axs[i, 1].set_xlabel('Number of Filters')
+        axs[i, 1].set_ylabel('Loss')
 
-        # Example of a third plot (e.g., Accuracy vs. Loss)
-        axes[i][2].plot(accuracies, losses, marker='o', linestyle='-', color='orange')
-        axes[i][2].set_title(f'Accuracy vs. Loss (Layers: {num_layers}, Dropout: {dropout_rate})')
-        axes[i][2].set_xlabel('Accuracy (%)')
-        axes[i][2].set_ylabel('Loss')
-        axes[i][2].set_xticks(np.arange(len(accuracies)))
-        axes[i][2].set_xticklabels([f'{a:.2f}' for a in accuracies], rotation=45)
+        # Accuracy vs Loss
+        axs[i, 2].plot(filters, accuracies, label='Accuracy', color='blue', marker='o')
+        axs[i, 2].plot(filters, losses, label='Loss', color='red', marker='x')
+        axs[i, 2].set_title(f'Accuracy & Loss (Layers: {num_layers}, Dropout: {dropout_rate})')
+        axs[i, 2].set_xlabel('Number of Filters')
+        axs[i, 2].legend()
 
+    plt.tight_layout()
     plt.savefig('experiment_results.png')
     plt.show()
 
-
-# Main Experiment Function
 def main():
     results = []
     configurations = [
         (num_layers, filters, dropout_rate)
-        for num_layers in [1, 2, 3]
-        for filters in [10, 40, 80]
-        for dropout_rate in [0.25, 0.5, 0.75]
+        for num_layers in [1, 2, 3]  # Fixed for demonstration
+        for filters in [10, 40, 80]  # Varying parameter
+        for dropout_rate in [0.25, 0.5, 0.75]  # Fixed for demonstration
     ]
 
     for num_layers, filters, dropout_rate in configurations:
         model = UpdatedExperimentNetwork(num_layers, filters, dropout_rate).to(device)
         optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=momentum)
+        print(f"Configuration: Layers={num_layers}, Filters={filters}, Dropout={dropout_rate}")
         for epoch in range(num_epochs):
-            train(model, device, train_loader, optimizer)
+            loss, epoch_time = train(model, device, train_loader, optimizer)
+            print(f"  Epoch {epoch+1}/{num_epochs}, Loss: {loss:.4f}, Time: {epoch_time:.2f}s")
         loss, accuracy = evaluate(model, device, test_loader)
         results.append((num_layers, filters, dropout_rate, accuracy, loss))
-        print(f"Layers: {num_layers}, Filters: {filters}, Dropout: {dropout_rate}, Accuracy: {accuracy}, Loss: {loss}")
+        print(f"Completed: Accuracy: {accuracy:.2f}%, Loss: {loss:.4f}\n")
 
     plot_results(results)
-
 
 if __name__ == "__main__":
     main()
