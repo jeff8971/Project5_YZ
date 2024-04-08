@@ -22,6 +22,10 @@ This project, Project 5: Recognition using Deep Networks by Yuan Zhao for CS5330
 - `model/`: Contains the saved model and optimizer state.
 - `data/`: Contains the MNIST and FashionMNIST datasets, along with custom datasets for Greek letters and handwritten digits.
 - `experiment_results.png`, `loss_plot.png`, `training_testing_loss.png`, `training_testing_metrics.png`: Visualization of training and testing results.
+- `extension.py`: Implementation of the Gabor filter for the model.
+  project.
+
+- [Extra Greek letters](https://github.com/jeff8971/Project5_YZ)
 
 ## Features
 - Training and testing a neural network on the MNIST dataset.
@@ -64,5 +68,10 @@ git clone https://github.com/jeff8971/Project5_YZ.git
 - To run custom design and experiment network:
 ```python task4_design_experiment.py```
 
+- To run the extension:
+```python extension.py```
 
 
+## Utilization of Travel Days
+
+2 days
