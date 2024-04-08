@@ -18,71 +18,75 @@ MNIST_TEST_ROOT = './data'
 HANDWRITTEN_TEST_ROOT = './data/handwritten'
 
 
-def test_network_MNIST(model, test_loader):
+def test_network_MNIST(network, test_loader, plot_num=9):
     """Test the network on MNIST data, print output values, predictions, labels, and plot digits."""
-    model.eval()
-    plt.figure(figsize=(9, 9))  # Adjust the figure size to fit a 3x3 grid
+    network.eval()  # Set the network to evaluation mode.
+    predicted_labels = []  # Store the predicted labels.
 
-    with torch.no_grad():
+    # Adjust figure size to be slightly smaller; adjust as needed for your display
+    plt.figure(figsize=(8, 8))
+
+    with torch.no_grad():  # No need to track gradients for testing.
         for idx, (data, target) in enumerate(test_loader):
-            output = model(data)
-            pred = output.argmax(dim=1, keepdim=True)
-            output_probabilities = F.softmax(output, dim=1).squeeze().tolist()
-
-            # Format output probabilities to scientific notation with two decimal places
-            formatted_output = [f"{prob:.2e}" for prob in output_probabilities]
-
-            # Print the required information
-            print(f"Image {idx + 1}, output values: [{', '.join(formatted_output)}], max value index: {pred.item()}, ground truth label: {target.item()}")
-
-            # Plot the first 9 digits in a 3x3 grid
-            if idx < 9:
-                plt.subplot(3, 3, idx + 1)
-                plt.imshow(data[0].squeeze().numpy(), cmap="gray")
-                plt.title(f"Pred: {pred.item()}")
-                plt.xticks([])
-                plt.yticks([])
-
-            # Break after 10 images
-            if idx == 9:
+            if idx >= plot_num:  # Only process a certain number of images.
                 break
 
-    plt.tight_layout()
+            output = network(data)  # Compute the network's output.
+            pred = output.argmax(dim=1, keepdim=True)  # Find the prediction.
+
+            # Format raw output values directly, without converting to probabilities.
+            formatted_output = [f"{value:.2f}" for value in output[0]]
+
+            # Print formatted information about predictions and actual labels.
+            print(f"Image {idx + 1}, output values: [{', '.join(formatted_output)}], prediction: {pred.item()}, true label: {target.item()}")
+            predicted_labels.append(pred.item())  # Store the predicted label for later.
+
+            # Plotting: Adjust subplot to accommodate the specified number of images.
+            ax = plt.subplot((plot_num + 2) // 3, 3, idx + 1)
+            ax.imshow(data[0].squeeze().numpy(), cmap="gray", interpolation="none")  # Display the image.
+            ax.set_title(f"Prediction: {predicted_labels[idx]}", pad=3)  # Set
+            # the title to show the prediction, adjust padding as needed.
+            ax.axis('off')  # Hide the axes.
+
+    # Adjust the layout to ensure the text is not covered
+    plt.tight_layout(pad=0.5, h_pad=1.0, w_pad=0.5)
     plt.show()
 
-# The rest of the code remains the same
 
+def test_network_handwritten(network, test_loader, plot_num=12):
+    """Test the network on handwritten digit images, print output values, predictions, labels, and plot digits. Show overall accuracy."""
+    network.eval()  # Set the network to evaluation mode.
+    correct = 0  # Initialize correct prediction counter.
+    total = 0  # Initialize total prediction counter.
+    plt.figure(figsize=(10, 8))  # Adjust the figure size for a better fit of plot_num images.
 
-
-def test_network_handwritten(network, test_loader):
-    """Test the network on handwritten digit images and plot predictions, and show accuracy."""
-    network.eval()
-    plt.figure(figsize=(15, 8))  # Adjust the figure size for a 3x4 grid
-
-    correct = 0  # Initialize correct prediction counter
-    total = 0  # Initialize total prediction counter
-
-    with torch.no_grad():
+    with torch.no_grad():  # No need to track gradients for testing.
         for idx, (data, target) in enumerate(test_loader):
-            if idx == PLOT_NUM_HANDWRITTEN:
+            if idx >= plot_num:  # Only process a certain number of images.
                 break
 
-            output = network(data)
-            pred = output.argmax(dim=1, keepdim=True)
-            correct += pred.eq(target.view_as(pred)).sum().item()  # Count correct predictions
-            total += target.size(0)  # Update total predictions
+            output = network(data)  # Compute the network's output.
+            pred = output.argmax(dim=1, keepdim=True)  # Find the prediction.
+            correct += pred.eq(target.view_as(pred)).sum().item()  # Count correct predictions.
+            total += target.size(0)  # Update total predictions.
 
-            plt.subplot(3, 4, idx + 1)  # Adjust for a 3x4 grid
-            plt.imshow(data[0].squeeze().numpy(), cmap='gray')
-            plt.title(f'Pred: {pred.item()}', pad=2)
-            plt.axis('off')
+            # Format raw output values directly, without converting to probabilities.
+            formatted_output = [f"{value:.2f}" for value in output[0]]
 
-    plt.tight_layout()
+            # Print formatted information about predictions and actual labels.
+            print(f"Image {idx + 1}, output values: [{', '.join(formatted_output)}], prediction: {pred.item()}, true label: {target.item()}")
+
+            # Plotting: Adjust subplot to accommodate the specified number of images.
+            ax = plt.subplot((plot_num + 3) // 4, 4, idx + 1)  # Adjust for a dynamic grid based on plot_num.
+            ax.imshow(data[0].squeeze().numpy(), cmap="gray", interpolation="none")  # Display the image.
+            ax.set_title(f"Pred: {pred.item()}", pad=3)  # Set the title to show the prediction, adjust padding as needed.
+            ax.axis('off')  # Hide the axes.
+
+    plt.tight_layout(pad=0.5, h_pad=1.0, w_pad=0.5)
     plt.show()
 
-    accuracy = 100. * correct / total  # Calculate accuracy
+    accuracy = 100. * correct / total  # Calculate accuracy.
     print(f'Accuracy: {accuracy:.2f}%')
-
 
 
 class HandwrittenTransform:
@@ -106,6 +110,10 @@ def main():
     )
     test_loader_MNIST = DataLoader(Subset(test_data_MNIST, range(PLOT_NUM_MNIST)), batch_size=1)
 
+    print("=================================================================")
+    print("=================================================================")
+    print("MNIST digits:\n")
+
     test_network_MNIST(network, test_loader_MNIST)
 
     handwritten_transform = transforms.Compose([
@@ -115,6 +123,9 @@ def main():
     ])
     handwritten_data = datasets.ImageFolder(root=HANDWRITTEN_TEST_ROOT, transform=handwritten_transform)
     handwritten_loader = DataLoader(handwritten_data, batch_size=1)
+    print("=================================================================")
+    print("=================================================================")
+    print("\nHandwritten digits:")
 
     test_network_handwritten(network, handwritten_loader)
 

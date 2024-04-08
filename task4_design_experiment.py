@@ -31,6 +31,7 @@ test_loader = DataLoader(
                           ])),
     batch_size=batch_size_test, shuffle=True)
 
+
 # ExperimentNetwork Definition
 class UpdatedExperimentNetwork(nn.Module):
     def __init__(self, num_conv_layers=2, conv_filters_per_layer=10, dropout_rate=0.5):
@@ -56,6 +57,7 @@ class UpdatedExperimentNetwork(nn.Module):
         x = self.fc2(x)
         return F.log_softmax(x, dim=1)
 
+
 # Training Function
 def train(model, device, train_loader, optimizer):
     start_time = time.time()
@@ -72,6 +74,7 @@ def train(model, device, train_loader, optimizer):
     elapsed_time = time.time() - start_time
     return total_loss / len(train_loader), elapsed_time
 
+
 # Evaluation Function
 def evaluate(model, device, test_loader):
     model.eval()
@@ -87,6 +90,7 @@ def evaluate(model, device, test_loader):
     total_loss /= len(test_loader.dataset)
     accuracy = 100. * correct / len(test_loader.dataset)
     return total_loss, accuracy
+
 
 # Plot Results Function
 def plot_results(results):
@@ -132,6 +136,7 @@ def plot_results(results):
     plt.savefig('experiment_results.png')
     plt.show()
 
+
 def main():
     results = []
     configurations = [
@@ -153,6 +158,7 @@ def main():
         print(f"Completed: Accuracy: {accuracy:.2f}%, Loss: {loss:.4f}\n")
 
     plot_results(results)
+
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,88 @@
+C:\Users\mason\Desktop\temp\Project5_YZ\Scripts\python.exe C:\Users\mason\Desktop\Project5_YZ\task3_greek.py 
+MyNetwork(
+  (conv1): Conv2d(1, 10, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(10, 20, kernel_size=(5, 5), stride=(1, 1))
+  (conv2_dropout): Dropout2d(p=0.5, inplace=False)
+  (fc1): Linear(in_features=320, out_features=50, bias=True)
+  (fc2): Linear(in_features=50, out_features=3, bias=True)
+)
+Epoch 1/30, Loss: 1.018189
+Epoch 2/30, Loss: 1.066224
+Epoch 3/30, Loss: 1.024074
+Epoch 4/30, Loss: 1.013418
+Epoch 5/30, Loss: 0.993345
+Epoch 6/30, Loss: 0.916453
+Epoch 7/30, Loss: 0.931129
+Epoch 8/30, Loss: 0.951207
+Epoch 9/30, Loss: 0.940808
+Epoch 10/30, Loss: 0.869011
+Epoch 11/30, Loss: 0.798605
+Epoch 12/30, Loss: 0.800372
+Epoch 13/30, Loss: 0.788568
+Epoch 14/30, Loss: 0.762866
+Epoch 15/30, Loss: 0.735699
+Epoch 16/30, Loss: 0.720576
+Epoch 17/30, Loss: 0.702003
+Epoch 18/30, Loss: 0.717691
+Epoch 19/30, Loss: 0.662191
+Epoch 20/30, Loss: 0.696765
+Epoch 21/30, Loss: 0.616167
+Epoch 22/30, Loss: 0.685119
+Epoch 23/30, Loss: 0.725747
+Epoch 24/30, Loss: 0.669716
+Epoch 25/30, Loss: 0.591510
+Epoch 26/30, Loss: 0.584404
+Epoch 27/30, Loss: 0.557503
+Epoch 28/30, Loss: 0.614689
+Epoch 29/30, Loss: 0.534792
+Epoch 30/30, Loss: 0.540219
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Test set: Accuracy: 8/9 (89%)
+Predicted: "alpha", Actual: "alpha"
+Predicted: "alpha", Actual: "alpha"
+Predicted: "alpha", Actual: "alpha"
+Predicted: "beta", Actual: "beta"
+Predicted: "beta", Actual: "beta"
+Predicted: "beta", Actual: "beta"
+Predicted: "gamma", Actual: "gamma"
+Predicted: "gamma", Actual: "gamma"
+Predicted: "beta", Actual: "gamma"
+Image 1, output values: [-0.29, -4.02, -1.44], prediction: alpha, true label: alpha
+Image 2, output values: [-0.63, -3.21, -0.85], prediction: alpha, true label: alpha
+Image 3, output values: [-0.44, -1.80, -1.66], prediction: alpha, true label: alpha
+Image 4, output values: [-3.25, -0.40, -1.24], prediction: beta, true label: beta
+Image 5, output values: [-1.22, -0.39, -3.55], prediction: beta, true label: beta
+Image 6, output values: [-0.77, -0.65, -4.10], prediction: beta, true label: beta
+Image 7, output values: [-5.16, -2.98, -0.06], prediction: gamma, true label: gamma
+Image 8, output values: [-3.53, -2.36, -0.13], prediction: gamma, true label: gamma
+Image 9, output values: [-4.17, -0.54, -0.91], prediction: beta, true label: gamma
+
+Process finished with exit code 0

@@ -63,7 +63,7 @@ def visualize_filters_and_effects(network: torch.nn.Module, train_loader: torch.
             # Adjusting to the referenced subplot format
             plt.subplot(5, 4,
                         2 * i + 1)  # Assuming 5 rows and 4 cols layout as in reference
-            plt.imshow(filter_np, cmap='gray')
+            plt.imshow(filter_np, cmap='viridis')
             plt.axis('off')  # Simplifying axis visibility management
 
             plt.subplot(5, 4, 2 * i + 2)  # Next subplot for the filtered image

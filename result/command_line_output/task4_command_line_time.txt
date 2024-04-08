@@ -1,0 +1,354 @@
+/Users/jeff/Desktop/CS5330_hws/hw4/hw4_4/Project5_YZ/.venv/bin/python /Users/jeff/Desktop/CS5330_hws/hw4/hw4_4/Project5_YZ/task4_design_experiment.py 
+Configuration: Layers=1, Filters=10, Dropout=0.25
+  Epoch 1/10, Loss: 0.7047, Time: 12.77s
+  Epoch 2/10, Loss: 0.4842, Time: 13.17s
+  Epoch 3/10, Loss: 0.4241, Time: 13.74s
+  Epoch 4/10, Loss: 0.3863, Time: 14.02s
+  Epoch 5/10, Loss: 0.3651, Time: 14.24s
+  Epoch 6/10, Loss: 0.3457, Time: 14.08s
+  Epoch 7/10, Loss: 0.3302, Time: 13.87s
+  Epoch 8/10, Loss: 0.3202, Time: 13.78s
+  Epoch 9/10, Loss: 0.3091, Time: 13.85s
+  Epoch 10/10, Loss: 0.2999, Time: 13.98s
+Completed: Accuracy: 88.77%, Loss: 0.3116
+
+Configuration: Layers=1, Filters=10, Dropout=0.5
+  Epoch 1/10, Loss: 0.7522, Time: 13.87s
+  Epoch 2/10, Loss: 0.4912, Time: 13.85s
+  Epoch 3/10, Loss: 0.4388, Time: 14.04s
+  Epoch 4/10, Loss: 0.4091, Time: 13.94s
+  Epoch 5/10, Loss: 0.3880, Time: 14.03s
+  Epoch 6/10, Loss: 0.3737, Time: 15.04s
+  Epoch 7/10, Loss: 0.3612, Time: 13.97s
+  Epoch 8/10, Loss: 0.3502, Time: 13.86s
+  Epoch 9/10, Loss: 0.3410, Time: 13.97s
+  Epoch 10/10, Loss: 0.3334, Time: 13.97s
+Completed: Accuracy: 88.84%, Loss: 0.3098
+
+Configuration: Layers=1, Filters=10, Dropout=0.75
+  Epoch 1/10, Loss: 0.8381, Time: 14.14s
+  Epoch 2/10, Loss: 0.5617, Time: 14.16s
+  Epoch 3/10, Loss: 0.5109, Time: 14.80s
+  Epoch 4/10, Loss: 0.4790, Time: 15.24s
+  Epoch 5/10, Loss: 0.4588, Time: 14.52s
+  Epoch 6/10, Loss: 0.4427, Time: 14.82s
+  Epoch 7/10, Loss: 0.4294, Time: 14.62s
+  Epoch 8/10, Loss: 0.4171, Time: 14.61s
+  Epoch 9/10, Loss: 0.4084, Time: 14.62s
+  Epoch 10/10, Loss: 0.4028, Time: 14.65s
+Completed: Accuracy: 87.70%, Loss: 0.3404
+
+Configuration: Layers=1, Filters=40, Dropout=0.25
+  Epoch 1/10, Loss: 0.5939, Time: 27.97s
+  Epoch 2/10, Loss: 0.4096, Time: 28.59s
+  Epoch 3/10, Loss: 0.3621, Time: 30.16s
+  Epoch 4/10, Loss: 0.3342, Time: 28.36s
+  Epoch 5/10, Loss: 0.3116, Time: 30.62s
+  Epoch 6/10, Loss: 0.2950, Time: 27.91s
+  Epoch 7/10, Loss: 0.2818, Time: 28.38s
+  Epoch 8/10, Loss: 0.2684, Time: 27.98s
+  Epoch 9/10, Loss: 0.2586, Time: 28.54s
+  Epoch 10/10, Loss: 0.2522, Time: 29.45s
+Completed: Accuracy: 89.44%, Loss: 0.2890
+
+Configuration: Layers=1, Filters=40, Dropout=0.5
+  Epoch 1/10, Loss: 0.6207, Time: 28.10s
+  Epoch 2/10, Loss: 0.4237, Time: 29.39s
+  Epoch 3/10, Loss: 0.3761, Time: 29.64s
+  Epoch 4/10, Loss: 0.3502, Time: 27.50s
+  Epoch 5/10, Loss: 0.3277, Time: 27.33s
+  Epoch 6/10, Loss: 0.3110, Time: 27.39s
+  Epoch 7/10, Loss: 0.3000, Time: 27.25s
+  Epoch 8/10, Loss: 0.2897, Time: 27.74s
+  Epoch 9/10, Loss: 0.2782, Time: 26.30s
+  Epoch 10/10, Loss: 0.2695, Time: 26.16s
+Completed: Accuracy: 89.64%, Loss: 0.2831
+
+Configuration: Layers=1, Filters=40, Dropout=0.75
+  Epoch 1/10, Loss: 0.6499, Time: 25.72s
+  Epoch 2/10, Loss: 0.4613, Time: 25.85s
+  Epoch 3/10, Loss: 0.4135, Time: 26.45s
+  Epoch 4/10, Loss: 0.3853, Time: 25.67s
+  Epoch 5/10, Loss: 0.3638, Time: 25.84s
+  Epoch 6/10, Loss: 0.3485, Time: 25.55s
+  Epoch 7/10, Loss: 0.3422, Time: 25.73s
+  Epoch 8/10, Loss: 0.3287, Time: 26.34s
+  Epoch 9/10, Loss: 0.3221, Time: 25.96s
+  Epoch 10/10, Loss: 0.3130, Time: 26.10s
+Completed: Accuracy: 88.98%, Loss: 0.3010
+
+Configuration: Layers=1, Filters=80, Dropout=0.25
+  Epoch 1/10, Loss: 0.5706, Time: 38.01s
+  Epoch 2/10, Loss: 0.3954, Time: 38.60s
+  Epoch 3/10, Loss: 0.3484, Time: 38.13s
+  Epoch 4/10, Loss: 0.3173, Time: 37.88s
+  Epoch 5/10, Loss: 0.2987, Time: 38.36s
+  Epoch 6/10, Loss: 0.2806, Time: 37.96s
+  Epoch 7/10, Loss: 0.2670, Time: 38.31s
+  Epoch 8/10, Loss: 0.2548, Time: 38.33s
+  Epoch 9/10, Loss: 0.2451, Time: 37.95s
+  Epoch 10/10, Loss: 0.2370, Time: 37.54s
+Completed: Accuracy: 90.13%, Loss: 0.2740
+
+Configuration: Layers=1, Filters=80, Dropout=0.5
+  Epoch 1/10, Loss: 0.5717, Time: 38.14s
+  Epoch 2/10, Loss: 0.4016, Time: 38.20s
+  Epoch 3/10, Loss: 0.3556, Time: 37.93s
+  Epoch 4/10, Loss: 0.3280, Time: 37.94s
+  Epoch 5/10, Loss: 0.3074, Time: 38.83s
+  Epoch 6/10, Loss: 0.2929, Time: 38.75s
+  Epoch 7/10, Loss: 0.2806, Time: 38.16s
+  Epoch 8/10, Loss: 0.2706, Time: 38.46s
+  Epoch 9/10, Loss: 0.2595, Time: 38.06s
+  Epoch 10/10, Loss: 0.2512, Time: 37.86s
+Completed: Accuracy: 89.22%, Loss: 0.2883
+
+Configuration: Layers=1, Filters=80, Dropout=0.75
+  Epoch 1/10, Loss: 0.6200, Time: 37.87s
+  Epoch 2/10, Loss: 0.4350, Time: 38.50s
+  Epoch 3/10, Loss: 0.3849, Time: 37.84s
+  Epoch 4/10, Loss: 0.3607, Time: 38.10s
+  Epoch 5/10, Loss: 0.3387, Time: 38.12s
+  Epoch 6/10, Loss: 0.3236, Time: 37.86s
+  Epoch 7/10, Loss: 0.3109, Time: 37.86s
+  Epoch 8/10, Loss: 0.3015, Time: 38.55s
+  Epoch 9/10, Loss: 0.2924, Time: 37.63s
+  Epoch 10/10, Loss: 0.2827, Time: 37.91s
+Completed: Accuracy: 89.69%, Loss: 0.2832
+
+Configuration: Layers=2, Filters=10, Dropout=0.25
+  Epoch 1/10, Loss: 0.9757, Time: 16.68s
+  Epoch 2/10, Loss: 0.5388, Time: 16.81s
+  Epoch 3/10, Loss: 0.4791, Time: 18.82s
+  Epoch 4/10, Loss: 0.4435, Time: 17.32s
+  Epoch 5/10, Loss: 0.4173, Time: 16.56s
+  Epoch 6/10, Loss: 0.3980, Time: 16.50s
+  Epoch 7/10, Loss: 0.3848, Time: 16.04s
+  Epoch 8/10, Loss: 0.3672, Time: 16.54s
+  Epoch 9/10, Loss: 0.3587, Time: 16.25s
+  Epoch 10/10, Loss: 0.3472, Time: 15.95s
+Completed: Accuracy: 88.08%, Loss: 0.3337
+
+Configuration: Layers=2, Filters=10, Dropout=0.5
+  Epoch 1/10, Loss: 1.0498, Time: 17.60s
+  Epoch 2/10, Loss: 0.6281, Time: 18.04s
+  Epoch 3/10, Loss: 0.5435, Time: 17.94s
+  Epoch 4/10, Loss: 0.5083, Time: 18.01s
+  Epoch 5/10, Loss: 0.4791, Time: 18.09s
+  Epoch 6/10, Loss: 0.4587, Time: 18.12s
+  Epoch 7/10, Loss: 0.4439, Time: 18.19s
+  Epoch 8/10, Loss: 0.4315, Time: 18.10s
+  Epoch 9/10, Loss: 0.4188, Time: 18.39s
+  Epoch 10/10, Loss: 0.4123, Time: 18.32s
+Completed: Accuracy: 86.98%, Loss: 0.3628
+
+Configuration: Layers=2, Filters=10, Dropout=0.75
+  Epoch 1/10, Loss: 1.1983, Time: 18.35s
+  Epoch 2/10, Loss: 0.7930, Time: 18.38s
+  Epoch 3/10, Loss: 0.6990, Time: 18.57s
+  Epoch 4/10, Loss: 0.6520, Time: 18.46s
+  Epoch 5/10, Loss: 0.6186, Time: 18.70s
+  Epoch 6/10, Loss: 0.6000, Time: 18.51s
+  Epoch 7/10, Loss: 0.5846, Time: 18.30s
+  Epoch 8/10, Loss: 0.5726, Time: 18.52s
+  Epoch 9/10, Loss: 0.5613, Time: 18.55s
+  Epoch 10/10, Loss: 0.5536, Time: 18.45s
+Completed: Accuracy: 84.44%, Loss: 0.4809
+
+Configuration: Layers=2, Filters=40, Dropout=0.25
+  Epoch 1/10, Loss: 0.7733, Time: 38.07s
+  Epoch 2/10, Loss: 0.4743, Time: 37.95s
+  Epoch 3/10, Loss: 0.4117, Time: 38.03s
+  Epoch 4/10, Loss: 0.3775, Time: 38.54s
+  Epoch 5/10, Loss: 0.3539, Time: 37.87s
+  Epoch 6/10, Loss: 0.3375, Time: 37.49s
+  Epoch 7/10, Loss: 0.3209, Time: 37.72s
+  Epoch 8/10, Loss: 0.3098, Time: 38.45s
+  Epoch 9/10, Loss: 0.3003, Time: 37.36s
+  Epoch 10/10, Loss: 0.2919, Time: 37.67s
+Completed: Accuracy: 88.84%, Loss: 0.3052
+
+Configuration: Layers=2, Filters=40, Dropout=0.5
+  Epoch 1/10, Loss: 0.8248, Time: 39.24s
+  Epoch 2/10, Loss: 0.5249, Time: 37.70s
+  Epoch 3/10, Loss: 0.4580, Time: 37.71s
+  Epoch 4/10, Loss: 0.4212, Time: 37.74s
+  Epoch 5/10, Loss: 0.3990, Time: 38.97s
+  Epoch 6/10, Loss: 0.3767, Time: 37.91s
+  Epoch 7/10, Loss: 0.3632, Time: 37.87s
+  Epoch 8/10, Loss: 0.3516, Time: 38.33s
+  Epoch 9/10, Loss: 0.3418, Time: 38.57s
+  Epoch 10/10, Loss: 0.3330, Time: 37.74s
+Completed: Accuracy: 88.75%, Loss: 0.3121
+
+Configuration: Layers=2, Filters=40, Dropout=0.75
+  Epoch 1/10, Loss: 0.8918, Time: 38.09s
+  Epoch 2/10, Loss: 0.6130, Time: 39.17s
+  Epoch 3/10, Loss: 0.5480, Time: 37.49s
+  Epoch 4/10, Loss: 0.5086, Time: 37.49s
+  Epoch 5/10, Loss: 0.4822, Time: 38.76s
+  Epoch 6/10, Loss: 0.4659, Time: 37.62s
+  Epoch 7/10, Loss: 0.4486, Time: 37.76s
+  Epoch 8/10, Loss: 0.4383, Time: 37.97s
+  Epoch 9/10, Loss: 0.4267, Time: 38.08s
+  Epoch 10/10, Loss: 0.4177, Time: 37.70s
+Completed: Accuracy: 86.69%, Loss: 0.3711
+
+Configuration: Layers=2, Filters=80, Dropout=0.25
+  Epoch 1/10, Loss: 0.6918, Time: 73.66s
+  Epoch 2/10, Loss: 0.4426, Time: 73.60s
+  Epoch 3/10, Loss: 0.3874, Time: 76.47s
+  Epoch 4/10, Loss: 0.3549, Time: 73.61s
+  Epoch 5/10, Loss: 0.3330, Time: 74.02s
+  Epoch 6/10, Loss: 0.3171, Time: 73.29s
+  Epoch 7/10, Loss: 0.3016, Time: 73.85s
+  Epoch 8/10, Loss: 0.2881, Time: 74.68s
+  Epoch 9/10, Loss: 0.2788, Time: 75.07s
+  Epoch 10/10, Loss: 0.2709, Time: 74.12s
+Completed: Accuracy: 89.64%, Loss: 0.2907
+
+Configuration: Layers=2, Filters=80, Dropout=0.5
+  Epoch 1/10, Loss: 0.7324, Time: 73.83s
+  Epoch 2/10, Loss: 0.4806, Time: 78.10s
+  Epoch 3/10, Loss: 0.4233, Time: 77.25s
+  Epoch 4/10, Loss: 0.3897, Time: 72.82s
+  Epoch 5/10, Loss: 0.3699, Time: 73.80s
+  Epoch 6/10, Loss: 0.3514, Time: 73.32s
+  Epoch 7/10, Loss: 0.3351, Time: 73.88s
+  Epoch 8/10, Loss: 0.3238, Time: 74.01s
+  Epoch 9/10, Loss: 0.3143, Time: 74.41s
+  Epoch 10/10, Loss: 0.3040, Time: 74.94s
+Completed: Accuracy: 88.87%, Loss: 0.2998
+
+Configuration: Layers=2, Filters=80, Dropout=0.75
+  Epoch 1/10, Loss: 0.8159, Time: 73.36s
+  Epoch 2/10, Loss: 0.5503, Time: 74.00s
+  Epoch 3/10, Loss: 0.4905, Time: 73.67s
+  Epoch 4/10, Loss: 0.4586, Time: 74.20s
+  Epoch 5/10, Loss: 0.4366, Time: 73.47s
+  Epoch 6/10, Loss: 0.4164, Time: 73.57s
+  Epoch 7/10, Loss: 0.4054, Time: 74.49s
+  Epoch 8/10, Loss: 0.3893, Time: 73.09s
+  Epoch 9/10, Loss: 0.3803, Time: 73.95s
+  Epoch 10/10, Loss: 0.3739, Time: 72.86s
+Completed: Accuracy: 87.34%, Loss: 0.3479
+
+Configuration: Layers=3, Filters=10, Dropout=0.25
+  Epoch 1/10, Loss: 1.4384, Time: 19.50s
+  Epoch 2/10, Loss: 0.7516, Time: 20.33s
+  Epoch 3/10, Loss: 0.6397, Time: 19.61s
+  Epoch 4/10, Loss: 0.5802, Time: 18.70s
+  Epoch 5/10, Loss: 0.5385, Time: 18.16s
+  Epoch 6/10, Loss: 0.5065, Time: 19.88s
+  Epoch 7/10, Loss: 0.4801, Time: 20.52s
+  Epoch 8/10, Loss: 0.4609, Time: 20.92s
+  Epoch 9/10, Loss: 0.4464, Time: 19.78s
+  Epoch 10/10, Loss: 0.4334, Time: 19.84s
+Completed: Accuracy: 85.97%, Loss: 0.3855
+
+Configuration: Layers=3, Filters=10, Dropout=0.5
+  Epoch 1/10, Loss: 1.3999, Time: 20.47s
+  Epoch 2/10, Loss: 0.8515, Time: 20.74s
+  Epoch 3/10, Loss: 0.7496, Time: 20.34s
+  Epoch 4/10, Loss: 0.6951, Time: 21.22s
+  Epoch 5/10, Loss: 0.6567, Time: 20.89s
+  Epoch 6/10, Loss: 0.6332, Time: 22.66s
+  Epoch 7/10, Loss: 0.6111, Time: 21.26s
+  Epoch 8/10, Loss: 0.5932, Time: 21.42s
+  Epoch 9/10, Loss: 0.5837, Time: 20.91s
+  Epoch 10/10, Loss: 0.5684, Time: 21.02s
+Completed: Accuracy: 82.12%, Loss: 0.5365
+
+Configuration: Layers=3, Filters=10, Dropout=0.75
+  Epoch 1/10, Loss: 1.8065, Time: 20.85s
+  Epoch 2/10, Loss: 1.1605, Time: 20.64s
+  Epoch 3/10, Loss: 1.0337, Time: 20.75s
+  Epoch 4/10, Loss: 0.9658, Time: 20.81s
+  Epoch 5/10, Loss: 0.9216, Time: 20.69s
+  Epoch 6/10, Loss: 0.8904, Time: 21.03s
+  Epoch 7/10, Loss: 0.8738, Time: 21.07s
+  Epoch 8/10, Loss: 0.8540, Time: 20.70s
+  Epoch 9/10, Loss: 0.8381, Time: 20.80s
+  Epoch 10/10, Loss: 0.8218, Time: 21.10s
+Completed: Accuracy: 70.43%, Loss: 0.8778
+
+Configuration: Layers=3, Filters=40, Dropout=0.25
+  Epoch 1/10, Loss: 1.0282, Time: 50.09s
+  Epoch 2/10, Loss: 0.5875, Time: 48.87s
+  Epoch 3/10, Loss: 0.4997, Time: 48.76s
+  Epoch 4/10, Loss: 0.4503, Time: 49.43s
+  Epoch 5/10, Loss: 0.4135, Time: 48.85s
+  Epoch 6/10, Loss: 0.3889, Time: 48.56s
+  Epoch 7/10, Loss: 0.3683, Time: 49.15s
+  Epoch 8/10, Loss: 0.3520, Time: 48.70s
+  Epoch 9/10, Loss: 0.3416, Time: 49.43s
+  Epoch 10/10, Loss: 0.3282, Time: 48.41s
+Completed: Accuracy: 88.01%, Loss: 0.3240
+
+Configuration: Layers=3, Filters=40, Dropout=0.5
+  Epoch 1/10, Loss: 1.1700, Time: 48.79s
+  Epoch 2/10, Loss: 0.6842, Time: 49.59s
+  Epoch 3/10, Loss: 0.5945, Time: 48.38s
+  Epoch 4/10, Loss: 0.5365, Time: 49.09s
+  Epoch 5/10, Loss: 0.4949, Time: 48.90s
+  Epoch 6/10, Loss: 0.4674, Time: 47.82s
+  Epoch 7/10, Loss: 0.4446, Time: 49.64s
+  Epoch 8/10, Loss: 0.4270, Time: 48.96s
+  Epoch 9/10, Loss: 0.4142, Time: 49.35s
+  Epoch 10/10, Loss: 0.4024, Time: 49.42s
+Completed: Accuracy: 86.39%, Loss: 0.3630
+
+Configuration: Layers=3, Filters=40, Dropout=0.75
+  Epoch 1/10, Loss: 1.3290, Time: 47.69s
+  Epoch 2/10, Loss: 0.8657, Time: 48.25s
+  Epoch 3/10, Loss: 0.7741, Time: 47.99s
+  Epoch 4/10, Loss: 0.7155, Time: 47.94s
+  Epoch 5/10, Loss: 0.6765, Time: 48.80s
+  Epoch 6/10, Loss: 0.6426, Time: 49.32s
+  Epoch 7/10, Loss: 0.6203, Time: 47.28s
+  Epoch 8/10, Loss: 0.6021, Time: 47.62s
+  Epoch 9/10, Loss: 0.5882, Time: 47.60s
+  Epoch 10/10, Loss: 0.5746, Time: 47.91s
+Completed: Accuracy: 81.15%, Loss: 0.5498
+
+Configuration: Layers=3, Filters=80, Dropout=0.25
+  Epoch 1/10, Loss: 0.9354, Time: 100.44s
+  Epoch 2/10, Loss: 0.5449, Time: 102.92s
+  Epoch 3/10, Loss: 0.4600, Time: 100.14s
+  Epoch 4/10, Loss: 0.4101, Time: 100.81s
+  Epoch 5/10, Loss: 0.3782, Time: 101.02s
+  Epoch 6/10, Loss: 0.3537, Time: 101.96s
+  Epoch 7/10, Loss: 0.3345, Time: 101.70s
+  Epoch 8/10, Loss: 0.3193, Time: 100.60s
+  Epoch 9/10, Loss: 0.3072, Time: 101.50s
+  Epoch 10/10, Loss: 0.2965, Time: 100.57s
+Completed: Accuracy: 89.12%, Loss: 0.2931
+
+Configuration: Layers=3, Filters=80, Dropout=0.5
+  Epoch 1/10, Loss: 0.9784, Time: 103.42s
+  Epoch 2/10, Loss: 0.6181, Time: 101.12s
+  Epoch 3/10, Loss: 0.5361, Time: 101.94s
+  Epoch 4/10, Loss: 0.4829, Time: 101.98s
+  Epoch 5/10, Loss: 0.4490, Time: 103.09s
+  Epoch 6/10, Loss: 0.4193, Time: 100.21s
+  Epoch 7/10, Loss: 0.4011, Time: 101.67s
+  Epoch 8/10, Loss: 0.3830, Time: 103.15s
+  Epoch 9/10, Loss: 0.3682, Time: 101.41s
+  Epoch 10/10, Loss: 0.3571, Time: 100.60s
+Completed: Accuracy: 86.90%, Loss: 0.3491
+
+Configuration: Layers=3, Filters=80, Dropout=0.75
+  Epoch 1/10, Loss: 1.2433, Time: 102.06s
+  Epoch 2/10, Loss: 0.7629, Time: 101.15s
+  Epoch 3/10, Loss: 0.6754, Time: 100.70s
+  Epoch 4/10, Loss: 0.6308, Time: 102.00s
+  Epoch 5/10, Loss: 0.5949, Time: 100.37s
+  Epoch 6/10, Loss: 0.5670, Time: 100.75s
+  Epoch 7/10, Loss: 0.5427, Time: 101.71s
+  Epoch 8/10, Loss: 0.5259, Time: 100.97s
+  Epoch 9/10, Loss: 0.5048, Time: 99.70s
+  Epoch 10/10, Loss: 0.4931, Time: 109.24s
+Completed: Accuracy: 84.73%, Loss: 0.4593
+
+
+Process finished with exit code 0
