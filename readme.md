@@ -25,7 +25,7 @@ This project, Project 5: Recognition using Deep Networks by Yuan Zhao for CS5330
 - `extension.py`: Implementation of the Gabor filter for the model.
   project.
 
-- [Extra Greek letters](https://github.com/jeff8971/Project5_YZ)
+- [Extra Greek letters](https://github.com/jeff8971/Project5_YZ/blob/master/data/greek_test.zip)
 
 ## Features
 - Training and testing a neural network on the MNIST dataset.
