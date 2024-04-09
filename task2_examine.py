@@ -1,3 +1,16 @@
+#!/usr/bin/env python3
+"""
+Filename: task2_examine.py
+Author: Yuan Zhao
+Email: zhao.yuan2@northeastern.edu
+Description: demonstrates visualizing convolutional neural network filters
+and their effects on MNIST dataset images using PyTorch and OpenCV.
+It features custom model subclasses, dynamic visualization layouts,
+and preprocessing techniques to showcase how initial convolutional layers interpret input images.
+Date: 2024-03-30
+"""
+
+
 import sys
 import torch
 from torch import nn

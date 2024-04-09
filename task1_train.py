@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Filename: test1_train.py
+Author: Yuan Zhao
+Email: zhao.yuan2@northeastern.edu
+Description: trains and tests a neural network on the MNIST dataset,
+visualizes the training data and model architecture,
+and plots training and testing losses.
+Date: 2024-03-30
+"""
 
 import sys
 import torch

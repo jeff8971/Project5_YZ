@@ -1,15 +1,21 @@
+#!/usr/bin/env python3
+"""
+Filename: task2_examine.py
+Author: Yuan Zhao
+Email: zhao.yuan2@northeastern.edu
+Description: Implenments a Convolutional Neural Network incorporating Gabor filters in the first layer.
+Date: 2024-03-30
+"""
+
+
 # Standard library imports
 import sys
-
-# Third-party imports
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-# Local imports
 from my_network import MyNetwork
 
 

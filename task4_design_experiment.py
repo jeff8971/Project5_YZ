@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Filename: task2_examine.py
+Author: Yuan Zhao
+Email: zhao.yuan2@northeastern.edu
+Description: customer design experiment for convolutional layers, dropout
+rates, and filters numbers
+Date: 2024-03-30
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

@@ -1,3 +1,16 @@
+#!/usr/bin/env python3
+"""
+Filename: test1_test.py
+Author: Yuan Zhao
+Email: zhao.yuan2@northeastern.edu
+Description: Tests a neural network on MNIST and handwritten digits using
+PyTorch,
+displaying predictions and images.
+It includes custom preprocessing for handwritten images
+and dynamically adjusts visualization based on the number of images tested.
+Date: 2024-03-30
+"""
+
 import os
 import sys
 import torch

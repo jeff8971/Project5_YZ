@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Filename: task2_examine.py
+Author: Yuan Zhao
+Email: zhao.yuan2@northeastern.edu
+Description: trains and evaluates a neural network on Greek letter images
+Date: 2024-03-30
+"""
+
+
 import torch
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets

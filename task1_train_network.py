@@ -3,9 +3,10 @@
 task1_train_network.py
 Author: Yuan Zhao (zhao.yuan2@northeastern.edu)
 Description: train and test the neural network.
-Date: 2024-03-19
+Date: 2024-03-30
 """
-# Import statements
+
+
 import os
 import torch
 import torch.nn.functional as F
